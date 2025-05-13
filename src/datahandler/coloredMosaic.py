@@ -7,13 +7,14 @@ from . import regist_dataset
 
 
 @regist_dataset
-class CustomSample(DenoiseDataSet):
+class ColoredMasaic(DenoiseDataSet):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.dataset_path = os.path.join('D:\python-learning\AP-BSN\dataset\\coloredMosaic');
 
     def _scan(self):
         # check if the dataset exists
-        dataset_path = os.path.join('WRITE_YOUR_DATASET_DIRECTORY')
+        dataset_path = os.path.join('D:\python-learning\AP-BSN\dataset\\coloredMosaic');
         assert os.path.exists(dataset_path), 'There is no dataset %s'%dataset_path
 
         # WRITE YOUR CODE FOR SCANNING DATA

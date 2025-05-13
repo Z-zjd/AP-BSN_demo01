@@ -18,15 +18,15 @@ model_input: [noisy] # e.g.) real_noisy, syn_noisy, clean
 trainer: Trainer
 
 training:
-  dataset: prep_SIDD
+  dataset: mosaic
 
   dataset_args:
     add_noise: None # e.g.) None bypass uni-15. gau-15. gau_blind-10.:50. het_gau-10.:50. see more detail in denoise_dataset.py
     crop_size: [120, 120]
     aug: ['hflip', 'rot']
-    n_repeat: 1
+    n_repeat: 4
   
-  batch_size: 8
+  batch_size: 1
 
   max_epoch: 20
   
@@ -47,7 +47,7 @@ training:
   warmup_iter: 200
 
 validation:
-  dataset: SIDD_val
+  dataset: mosaic
 
   dataset_args:
     crop_size: None # [64, 64]
@@ -72,15 +72,13 @@ log:
   interval_iter: 10
 
 test:
-  dataset: SIDD_benchmark
+  dataset: mosaic
 
   dataset_args:
     crop_size: None # [64, 64]
     add_noise: None # e.g.) None uni-15. gau-15. gau_blind-10.:50. poi_gau-10.:50.
 
-  add_con: 0.5
-  floor: True
+  add_con: 0.0
+  floor: False
 
   save_image: True
-
-

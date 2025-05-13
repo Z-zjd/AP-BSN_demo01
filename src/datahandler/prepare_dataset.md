@@ -65,7 +65,7 @@ python prep.py -d NIND
 
 ## Custom dataset
 
-If you want to train our AP-BSN on your custom images, you should make custom dataset class in [custom.py](./custom.py) file. There is a skeleton code for this. Fill in _scan() and _load_data() functions.  
+If you want to train our AP-BSN on your custom images, you should make custom dataset class in [custom.py](./blue.py) file. There is a skeleton code for this. Fill in _scan() and _load_data() functions.  
 
 ```
 @regist_dataset
